@@ -1,6 +1,6 @@
 CREATE TABLE `departure_statistics` (
 	`airline_statistics_id` INT NOT NULL AUTO_INCREMENT,
-	`airport_cd` VARCHAR(255) NOT NULL,
+	`airport_cd` INT NOT NULL,
 	`airline_cd` INT NOT NULL,
 	`date` DATE NOT NULL,
 	`flight_number` INT NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE `airport_ref` (
 );
 
 CREATE TABLE `airline_ref` (
-	`airline_id` VARCHAR(255) NOT NULL,
+	`airline_id` INT NOT NULL,
 	`airline_name` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`airline_id`)
 );
