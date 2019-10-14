@@ -1,7 +1,7 @@
 CREATE TABLE `departure_statistics` (
 	`airline_statistics_id` INT NOT NULL AUTO_INCREMENT,
-	`airport_cd` INT NOT NULL,
-	`airline_cd` INT NOT NULL,
+	`airport_id` INT NOT NULL,
+	`airline_id` INT NOT NULL,
 	`date` DATE NOT NULL,
 	`flight_number` INT NOT NULL,
 	`tail_number` VARCHAR(255) NOT NULL,
@@ -22,9 +22,9 @@ CREATE TABLE `departure_statistics` (
 );
 
 CREATE TABLE `airport_ref` (
-	`airport_cd` INT NOT NULL AUTO_INCREMENT,
+	`airport_id` INT NOT NULL AUTO_INCREMENT,
 	`airport_name` VARCHAR(255) NOT NULL,
-	PRIMARY KEY (`airport_cd`)
+	PRIMARY KEY (`airport_id`)
 );
 
 CREATE TABLE `airline_ref` (
@@ -33,7 +33,7 @@ CREATE TABLE `airline_ref` (
 	PRIMARY KEY (`airline_id`)
 );
 
-ALTER TABLE `departure_statistics` ADD CONSTRAINT `departure_statistics_fk0` FOREIGN KEY (`airport_cd`) REFERENCES `airport_ref`(`airport_cd`);
+ALTER TABLE `departure_statistics` ADD CONSTRAINT `departure_statistics_fk0` FOREIGN KEY (`airport_id`) REFERENCES `airport_ref`(`airport_id`);
 
-ALTER TABLE `departure_statistics` ADD CONSTRAINT `departure_statistics_fk1` FOREIGN KEY (`airline_cd`) REFERENCES `airline_ref`(`airline_id`);
+ALTER TABLE `departure_statistics` ADD CONSTRAINT `departure_statistics_fk1` FOREIGN KEY (`airline_id`) REFERENCES `airline_ref`(`airline_id`);
 
